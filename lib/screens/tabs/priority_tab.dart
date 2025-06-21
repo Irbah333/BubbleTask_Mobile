@@ -93,6 +93,11 @@ class _PriorityTabState extends State<PriorityTab> {
     _loadData();
   }
 
+  Future<void> _deleteTask(int taskId) async {
+    await DatabaseHelper.instance.deleteTask(taskId);
+    _loadData();
+  }
+
   Widget _buildTasksByDate() {
     Map<String, List<Task>> tasksByDate = {};
 
@@ -232,6 +237,10 @@ class _PriorityTabState extends State<PriorityTab> {
                         ),
                       ),
                     ],
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.delete, color: Colors.red),
+                    onPressed: () => _deleteTask(task.id!),
                   ),
                 ],
               ),

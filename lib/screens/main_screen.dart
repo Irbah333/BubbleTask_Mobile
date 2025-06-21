@@ -70,11 +70,17 @@ class _MainScreenState extends State<MainScreen> {
               label: '',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.calendar_today),
+              icon: Transform.translate(
+                offset: Offset(-30, 0), // geser calendar ke kiri
+                child: Icon(Icons.calendar_today),
+              ),
               label: '',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.star),
+              icon: Transform.translate(
+                offset: Offset(30, 0), // geser star ke kanan
+                child: Icon(Icons.star),
+              ),
               label: '',
             ),
             BottomNavigationBarItem(
@@ -99,4 +105,3 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 }
-
